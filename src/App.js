@@ -14,14 +14,14 @@ class App extends Component {
   }
 
   /* 
-    Axios call to get list of housing, then storing it in state so that we can
-    later modify the display with filters for sorting the data.
+    Axios call to get list of housing, then storing it in `state` so that we 
+    could later modify the display with filters for sorting the data.
   */
-    async componentDidMount() {
-      const response = await axios("https://data.sfgov.org/resource/9rdx-httc.json");
-      const housingList = response.data;
-      this.setState({ housingList })
-    }
+  async componentDidMount() {
+    const response = await axios("https://data.sfgov.org/resource/9rdx-httc.json");
+    const housingList = response.data;
+    this.setState({ housingList })
+  }
   
   /* 
     Determines if the total number of housing units is greater than or equal to 
