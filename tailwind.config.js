@@ -4,6 +4,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      fontFamily: {
+        'sans': ["Rubik", "Frutiger", "Frutiger Linotype", "Univers", "Calibri", "Gill Sans", "Gill Sans MT", "Myriad Pro", "Myriad", "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", "Tahoma", "Geneva", "Helvetica Neue", "Helvetica", "Arial", "sans-serif"]
+      },
       colors: {
         "slate-blue": "#1c3e57",
         "grey-l1": "#f8f8f8"

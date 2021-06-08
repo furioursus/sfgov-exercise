@@ -30,7 +30,7 @@ const HousingList = (props) => {
           <th className="py-4 px-5"><span className="sr-only">Percent Affordable</span><span className="not-sr-only">%</span></th>
         </tr>
       </thead>
-      <tbody>
+      <tbody className="text-slate-blue">
       {props.listings.filter(list => list.street_name !== "Confidential").map((list, idx) => (
         <tr key={idx} className="odd:bg-white even:bg-grey-l1">
           <td className="py-4 pl-5 max-w-xs break-words">{list.project_name}</td>
