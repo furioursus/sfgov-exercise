@@ -14,7 +14,9 @@ import React from "react";
   TODO: Add visual flags for obviously bad data
   I think that because we are also using the `affordableUnitsEval()` function to determine if 
   a project has more affordable housing than the total, we would add some sort of visual flag
-  if the person believed to be consuming this were internal.
+  to indicate that something isn’t right with the current data. It’s hard to tell what sort of 
+  tests or sanitizing takes place on the existing API endpoint, but we don’t want our users to
+  wonder why Potrero HOPE SF has 71 affordable units and 0 total units.
 */
 const HousingList = (props) => {
   return (
@@ -24,7 +26,8 @@ const HousingList = (props) => {
           <th className="py-4 pl-5">Project Name</th>
           <th className="py-4 pl-5">Address</th>
           <th className="py-4 pl-5">Affordable Units</th>
-          <th className="py-4 px-5">Percent</th>
+          <th className="py-4 pl-5">Total Units</th>
+          <th className="py-4 px-5"><span className="sr-only">Percent Affordable</span><span className="not-sr-only">%</span></th>
         </tr>
       </thead>
       <tbody>
@@ -36,6 +39,9 @@ const HousingList = (props) => {
           </td>
           <td className="py-4 pl-5">
             {props.affordableUnitsEval(list.affordable_units, list.total_units)}
+          </td>
+          <td className="py-4 pl-5">
+            {Number(list.total_units)}
           </td>
           <td className="py-4 px-5">
             {props.unitPercentageEvaluation(list.affordable_units, list.total_units)}
