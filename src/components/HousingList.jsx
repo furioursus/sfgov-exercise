@@ -1,5 +1,21 @@
 import React from "react";
+/*
+  Component for listing the housing units in a table. Currently the whole app basically, but
+  were I to add on more features, I’d like to think I’d start with the following:
+  
+  TODO: Add search functionality
+  I’d perhaps use Algolia, which would then mean adding the information to their system instead
+  which defeats the purpose of importing the JSON file in the first place.
 
+  TODO: Add column filters
+  I’d also add filtering to allow for sorting each column. Project Name and Address would be 
+  sorted alphabetically and Affordable Units and Percent would besorted numerically.
+
+  TODO: Add visual flags for obviously bad data
+  I think that because we are also using the `affordableUnitsEval()` function to determine if 
+  a project has more affordable housing than the total, we would add some sort of visual flag
+  if the person believed to be consuming this were internal.
+*/
 const HousingList = (props) => {
   return (
     <table className="w-full font-normal text-base">
