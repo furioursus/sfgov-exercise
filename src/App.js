@@ -13,6 +13,11 @@ class App extends Component {
     }
   }
 
+  /* 
+    Determines if the total number of housing units is greater than or equal to 
+    affordable ones. If they aren’t, we’re going to assume that there is an error 
+    in the data and return a `0` value.
+  */
   affordableUnitsEval(affordableUnits, totalUnits) {
     const aUnits = Number(affordableUnits);
     const tUnits = Number(totalUnits);
@@ -23,6 +28,10 @@ class App extends Component {
     }
   }
 
+  /* 
+    Determines what percentage of the houses are affordable units versus how many 
+    there are total in this node.
+  */
   unitPercentageEvaluation(affordableUnits, totalUnits) {
     const aUnits = Number(affordableUnits);
     const tUnits = Number(totalUnits);
@@ -33,8 +42,11 @@ class App extends Component {
     }
   }
   
+  /* 
+    Axios call to get list of housing, then storing it in state so that we can
+    later modify the display with filters for sorting the data.
+  */
   async componentDidMount() {
-    // do an axios call to get top stories
     const response = await axios("https://data.sfgov.org/resource/9rdx-httc.json");
     const housingList = response.data;
     this.setState({ housingList })
